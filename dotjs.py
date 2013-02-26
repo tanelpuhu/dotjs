@@ -13,74 +13,80 @@ JSDIR = os.path.join(os.path.expanduser('~'), '.js')
 
 def get_cert():
     return """-----BEGIN PRIVATE KEY-----
-MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDRO4nxWOWZpox3
-290zjmqmIxFjUy0jU40ZI4yBSzwtYNTt/wvElCly3xqVBJ71SRgzNF/5z7csqR4R
-d3sWfjJK2bFNbaNUgAC4Zqqo1qs/cru7uJygTSZPmmN6bW0xRIeyz3bQfkV+lM76
-QiZ1bF+V0dYr9tDkFy8XtsCI5AHqLlxBNpfuLEwpe2kBXEYUL/om45kC3RifYE1X
-i56am/zILqUrzuxmyVMbBFD51nUFj03H4Z9bUVf31giH/rASVy2mSGlDAoIpkHIu
-nv0rbo5dziTN09LzF1qas21zDqgoPqOkV52YaVQDfA7pOajzCMFGkEFoV2ol26Jv
-CP7HlhxVAgMBAAECggEAc5C1Ii79sh5Bm7o+tUlGMrlP01KPreFqH6Z45rkNZesD
-8OhcMZm8QwxjfEdvHP/gc/fLwwktnWdTikY6IDRXxuvyeFfETNnei/t464SWVZcj
-hg3zxL6YGIOnymlCVGILqYHZmFMGQ2Ih6Cw9XcIcEX4zE1liC3maszhno7R8MkGk
-4GCRVOZraatcZcjibrAeBDGFLD6adrnj6CDfQjLvQw6JTWCjxWpWOvpEqpGyMkvG
-YVn/gmzdNWiOfQ3TPEnRsDBe65UtmAIw5RnwyUTeZiviMh45mSdWBbqZXpfoYXeT
-eHoO8mLye24sHepuyVSEGPSapuNjUHHXWUiyxX6BCQKBgQD2LGDzwi4m7QME8zmp
-sGoIYnbv823067p25es5Kh9K54Udj5H0XzSW/gNDy35qe/8aIvSXA7j5M93f+DCn
-xnHsq5cs9dKpg24mj3dtuiBXdKnwu9ZQsQA1DfwuvutV0OjmrzYZnggPKdXXUpqY
-+4l4G1MpsCXPYJvCSn0qGAboOwKBgQDZlap5fNuzmWhoO96EoU/OHwI2wsXeOqPE
-osl9ejP0L8096x8+SNtVCJcVffXYWl0QmbwoUdmUHcnD9IZqyIdc/9OKxm6nQyq7
-tQexl8REKBxEChEAeSmGr6JNrJcHwxLFkjVHhYiZNHOuq3Aj7R7BD5EyvSwdd1kV
-F28aY15UrwKBgQDJ30S2QGO2eiBCu+5qcAfTzmM4jIh8E586h3soypkUxN0Ni8Gm
-AzjOJYmp28NUMVDWLxoiiOP0QAtP8mh7/SlJasEzFndlmSkIKBhI/Bwve7Use+zZ
-CP1hhJFsCBZWrlV/bulPgp+bR7RbuhqbH5Lw0n+VLSUkdVXls04G6eMoJwKBgFj4
-WALhST0BJ64nfO+ivm08RL17m0kplTmcjuNeCsx4l2YQNHBVfkog/xZssRBMsu1M
-z6F1BpEINS6JWEVlxeQDP87pIOoIDvs+JO07b6em9xfjPdyBrrdCLg2w2vjzjUN4
-a4zZT2fGCN+NfodSOFcdNHQY4mcSHD0Bng6ePz5FAoGBAJZ9E7urg/SQ/75Y3Exa
-gBrDhFUl7qK2/HuDqr61eq8VX9dEQeKltA3Kcsr3wGrfwQz7g5Ij3eD6/zwD8YtS
-TyDGbdpNDS3/jufUFQGhBz7ahHdoZvH14AyTTRUbhXfWf4oJZcqesO5j633nFz+A
-qV2WxChDoN/oO/qedLn548/U
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDeJzZroDQ+ybdu
+sA9fI+OUuoGz4K68rSSZxGCN7WGSzqhnWYOyXO/Sdv9hkR3C4dGQYSkVjTCEO9tD
+0RsWE/5XuP2WJE94CkE0U8gpFPn2Jx/n88o0I+OZkE6RouSZCJFRkXS0T1J5Pix6
+p0qCyssBY6d/OBZaZ1Vwv7gdLuUq52ykwYdf5mlsY2dNvHIdx+QCqIjTuswKbJMs
+qa+9TpanWRjSztSi+Xmu5bDUXHbStJIa40zW9Ju1zQCACqyan8ANmdRzTFX+GtoI
+FcK8MmU8KuP0o314uN5aHLioarCAPO7EnCqh7PTH/7mcUKxzHcpo39p3DG+3YvTS
+ILXOjyCNAgMBAAECggEBALe5RlCMFak3ufRYtt3AGJ8P/+R7lQeFShfBSPkXsPJw
+5uVSKpCAO/abY2mVUj+x8lathATG17EEr7nOXdBMiLST0WUycmacVICqKYeQSYlB
+oil6fWfRppGBvvjC9rt5UnVbDmFwmIyc1rw5Tm4MuQdVG1kjUZlCjG7Kn8HC3tQz
+NjR9eeRm8vrf5XmKmRrMAuHH5lO7N75X4JVPSew/MdranYDU0xNbPsbUQEMfcfN2
+DHRnqVOtWku/2d3a5sfdN4vaRY4prJOCFLxKqXQfFXczZdBoiP1HhuK4iu3iRWgY
+Ax1boMyXn/QpOEgWmLRMHdEff2kniD/xCYTDjPxX+QECgYEA8R7HrB+TUFvgzLtx
+99Q1AZ2bAtCQBXG8io3sokz/ijhQAcEf1vzkqHrGAFbAnkKoNRg1ATNAy+VpUjkn
+gXscuEZyZKlndXL4riYabNNLV9IJlAfFPZ3k3MpedrtYSj+xn815s1aNykzNIS92
+CfIVE3r9x62Ql7VxsFZwjKBuZ5UCgYEA69zKcVQLfxP5D6nUzLX+z+PZdDKxznLT
+73fIIJ4GSCA7Cp8Hp/MFgPlj3A+Tz7UAw2/JjMRHtzXL+zhRN5RTw04A7RW78SUU
+dDZ5XMrl36BF+ox74sxaitPMZoxQsWWzMf72VzaMtuBFA5R/MGBwlAcssrtlA7DP
+VCy6sePuNxkCgYBeztSCOHQrL8VHmxin8tfYx8jQpYNLsLoK3N1Dv/Tmu1eyKObF
+GPEr0gKS1YmtcNZE8jy9ORLsWUs9Wl3PSsIzLvgB3p5gjxF7IF5ZlgdVA7BidV+3
+56K6shPMqcOAhmToSdnli037UpGBz/Cg3oAtBbpNzlBBZsXKKWLd2KMwtQKBgQCX
+pdD/xpLRtOzI9l/c8xMPZScWP9X0r/22FSS2XAQb8aUkchWBFY6vWymqftWBkZYZ
+ElHbUQPvNwac0pvdiV/FzexogzXgmP+qrK+hSs871hfIPPUWYF/CrOTZ9lOXi5UI
+iy6l6mvU1SNqZtrUJt2bP3WswTH0ioTzUQMEh1FNWQKBgFtng/DDxHy/1Fr0FXGF
+QOyBnGfSlXAgY9njVd55Em89rM3pyz+wYu2ODJUe0gg8gSvxlw2+2LkZys9rngiZ
+gD0YVj4TjMg0YIE8U1MLNiAPmPgBrXhwrTixiHB8tEofPb3AjvqqnR5fg9Vi2cmr
+sGtyz5cKI2J8M/n6yWzCOOj3
 -----END PRIVATE KEY-----
 -----BEGIN CERTIFICATE-----
-MIIDxTCCAq2gAwIBAgIJAOo00HVw8oguMA0GCSqGSIb3DQEBBQUAMHkxCzAJBgNV
-BAYTAkVFMRMwEQYDVQQIDApTb21lLVN0YXRlMRAwDgYDVQQHDAdUYWxsaW5uMSEw
-HwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxIDAeBgkqhkiG9w0BCQEW
-EXRhbmVsQGx1c2lrYXMuY29tMB4XDTEzMDIyNjE3MTYyNVoXDTE0MDIyNjE3MTYy
-NVoweTELMAkGA1UEBhMCRUUxEzARBgNVBAgMClNvbWUtU3RhdGUxEDAOBgNVBAcM
-B1RhbGxpbm4xITAfBgNVBAoMGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDEgMB4G
+MIID9TCCAt2gAwIBAgIJAKv/J3FyKQTjMA0GCSqGSIb3DQEBBQUAMIGQMQswCQYD
+VQQGEwJFRTETMBEGA1UECAwKU29tZS1TdGF0ZTEQMA4GA1UEBwwHVGFsbGlubjEU
+MBIGA1UECgwLTHVzaWthcyBJTkMxDjAMBgNVBAsMBWRvdGpzMRIwEAYDVQQDDAls
+b2NhbGhvc3QxIDAeBgkqhkiG9w0BCQEWEXRhbmVsQGx1c2lrYXMuY29tMB4XDTEz
+MDIyNjIwMTkwOVoXDTE0MDIyNjIwMTkwOVowgZAxCzAJBgNVBAYTAkVFMRMwEQYD
+VQQIDApTb21lLVN0YXRlMRAwDgYDVQQHDAdUYWxsaW5uMRQwEgYDVQQKDAtMdXNp
+a2FzIElOQzEOMAwGA1UECwwFZG90anMxEjAQBgNVBAMMCWxvY2FsaG9zdDEgMB4G
 CSqGSIb3DQEJARYRdGFuZWxAbHVzaWthcy5jb20wggEiMA0GCSqGSIb3DQEBAQUA
-A4IBDwAwggEKAoIBAQDRO4nxWOWZpox3290zjmqmIxFjUy0jU40ZI4yBSzwtYNTt
-/wvElCly3xqVBJ71SRgzNF/5z7csqR4Rd3sWfjJK2bFNbaNUgAC4Zqqo1qs/cru7
-uJygTSZPmmN6bW0xRIeyz3bQfkV+lM76QiZ1bF+V0dYr9tDkFy8XtsCI5AHqLlxB
-NpfuLEwpe2kBXEYUL/om45kC3RifYE1Xi56am/zILqUrzuxmyVMbBFD51nUFj03H
-4Z9bUVf31giH/rASVy2mSGlDAoIpkHIunv0rbo5dziTN09LzF1qas21zDqgoPqOk
-V52YaVQDfA7pOajzCMFGkEFoV2ol26JvCP7HlhxVAgMBAAGjUDBOMB0GA1UdDgQW
-BBT50d0d/4qgR/2Wm4F+Ci0WU2KvHTAfBgNVHSMEGDAWgBT50d0d/4qgR/2Wm4F+
-Ci0WU2KvHTAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4IBAQBvgEoJnbeQ
-SCOZyXvITyBxNJDvmmU9/CGjFhId0HeQmXWxTTNmPC4kWnPfq2SPfCS4u2BuI2Bk
-v+XqX60ovFZlgcgbus3LU1isIm2WIh80SNOUAEM+EpkRnYqX6a4Fz/5s30I787dA
-AzJ3dBwJ57U3UW29Cwqmjtt/VGe2VFlmbNST3ntZ6r5a9l4Ne8h3ygCOXhJ/qFbw
-P21fJEu/ZJ+CGneqyYdTNKYcTIgr5iwqXG8dy5znax01MdJHSZJdkHxZgw+mTwWt
-UIT6vRMb0GrB5tItGPVlzxHpQwqG9AB5uZDDNCrEK/OPqPqz0v0WkA+K4kMi6qJT
-kTifrhfayv8o
+A4IBDwAwggEKAoIBAQDeJzZroDQ+ybdusA9fI+OUuoGz4K68rSSZxGCN7WGSzqhn
+WYOyXO/Sdv9hkR3C4dGQYSkVjTCEO9tD0RsWE/5XuP2WJE94CkE0U8gpFPn2Jx/n
+88o0I+OZkE6RouSZCJFRkXS0T1J5Pix6p0qCyssBY6d/OBZaZ1Vwv7gdLuUq52yk
+wYdf5mlsY2dNvHIdx+QCqIjTuswKbJMsqa+9TpanWRjSztSi+Xmu5bDUXHbStJIa
+40zW9Ju1zQCACqyan8ANmdRzTFX+GtoIFcK8MmU8KuP0o314uN5aHLioarCAPO7E
+nCqh7PTH/7mcUKxzHcpo39p3DG+3YvTSILXOjyCNAgMBAAGjUDBOMB0GA1UdDgQW
+BBTL0gaqQAn1C6hpUWyDjmLKKpUknjAfBgNVHSMEGDAWgBTL0gaqQAn1C6hpUWyD
+jmLKKpUknjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4IBAQAJjGoRlQ+1
+MxSDSiFrzLV6G9b6ut8cV9WF7I1AhfvE+qrPMsNQk8N5R8iIRU4wJ+2sMecP/Ibt
+zBdfu5G5g7iXB0orqvXq080vF0Ecyi0e4MRDQUPU+7guaOQncnCEYyiFolY8dmQo
+VjUTk1StNeCOK41sRQ/XAJs9GPvIMKgbgDlHYW5bEdDj1+rxhifsRPRgZPCnPGIh
+CkiejtQ3E+k5KLgJPxusXyMJnHCXwtdl6yzV5CbgTImxtW8PbI1ExY6Z+It5Yaq5
+G4TxZdHCZVlBEDyMdTn4SRCwR7wt2B9rpd6tm1+F0Jvgw1vBWUndVi6gHeOzHxck
+TjoBRCr1lHEw
 -----END CERTIFICATE-----
 """
 
 
 def get_script(jsfile):
-    jsfile = os.path.join(JSDIR, jsfile)
-    if os.path.exists(jsfile):
-        return open(jsfile, 'r').read()
+    chunks = jsfile.split('.')
+    while chunks:
+        filename = os.path.join(JSDIR, '.'.join(chunks))
+        if os.path.exists(filename):
+            return open(filename, 'r').read()
+        chunks = chunks[1:]
+
     default = os.path.join(JSDIR, 'default.js')
     if os.path.exists(default):
         return open(default, 'r').read()
-    return '// no ~/.js/ file\n'
+
+    return ''
 
 
 class Server(BaseHTTPRequestHandler):
     def do_GET(request):
         """Respond to a GET request."""
         request.send_response(200)
-        if request.path == '/':
+        if not request.path.endswith('.js'):
             request.send_header("Content-Type", "text/plain")
             request.end_headers()
             request.wfile.write('GOTO http://bit.ly/dotjs')
@@ -89,6 +95,8 @@ class Server(BaseHTTPRequestHandler):
         request.send_header("Content-Type", "text/javascript")
         jsfile = request.path[1:]
         script = get_script(jsfile)
+        if not script:
+            script = '// no ~/.js/ file\n'
         request.send_header("Content-Length", len(script))
         request.end_headers()
         request.wfile.write(script)
