@@ -7,6 +7,7 @@ from BaseHTTPServer import HTTPServer
 import ssl
 import sys
 import os
+import re
 
 JSDIR = os.path.join(os.path.expanduser('~'), '.js')
 
@@ -68,18 +69,31 @@ TjoBRCr1lHEw
 
 
 def get_script(jsfile):
+    content = None
+
     chunks = jsfile.split('.')
     while chunks:
         filename = os.path.join(JSDIR, '.'.join(chunks))
         if os.path.exists(filename):
-            return open(filename, 'r').read()
+            content = open(filename, 'r').read()
+            break
         chunks = chunks[1:]
 
-    default = os.path.join(JSDIR, 'default.js')
-    if os.path.exists(default):
-        return open(default, 'r').read()
+    if content is not None:
+        default = os.path.join(JSDIR, 'default.js')
+        if os.path.exists(default):
+            content = open(default, 'r').read()
 
-    return ''
+    content = content or ''
+    pattern = '//(\s*)include\s+(?P<filename>.*)$'
+    for inc in re.finditer(pattern, content, re.MULTILINE):
+        found = inc.group()
+        name = inc.groupdict()
+        filename = os.path.join(JSDIR, name.get('filename', ''))
+        if os.path.exists(filename):
+            content = content.replace(found, open(filename, 'r').read())
+
+    return content
 
 
 class Server(BaseHTTPRequestHandler):
