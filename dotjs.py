@@ -11,6 +11,9 @@ import re
 
 JSDIR = os.path.join(os.path.expanduser('~'), '.js')
 
+if not os.path.exists(JSDIR):
+    os.mkdir(JSDIR)
+
 
 def get_cert():
     return """-----BEGIN PRIVATE KEY-----
