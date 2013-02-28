@@ -82,12 +82,12 @@ def get_script(jsfile):
             break
         chunks = chunks[1:]
 
-    if content is not None:
+    if content is None:
         default = os.path.join(JSDIR, 'default.js')
-        if os.path.exists(default):
-            content = open(default, 'r').read()
+        if not os.path.exists(default):
+            return ''
+        content = open(default, 'r').read()
 
-    content = content or ''
     pattern = '//(\s*)include\s+(?P<filename>.*)$'
     for inc in re.finditer(pattern, content, re.MULTILINE):
         found = inc.group()
