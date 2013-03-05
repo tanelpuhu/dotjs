@@ -10,6 +10,7 @@ import os
 import re
 
 JSDIR = os.path.join(os.path.expanduser('~'), '.js')
+PIDFILE = '/tmp/.js.pid'
 
 if not os.path.exists(JSDIR):
     os.mkdir(JSDIR)
@@ -137,7 +138,7 @@ if 'test' in sys.argv:
     main()
 
 elif 'start' in sys.argv or 'restart' in sys.argv:
-    daemon = yapdi.Daemon()
+    daemon = yapdi.Daemon(pidfile=PIDFILE)
     if 'restart' in sys.argv:
         retcode = daemon.restart()
     else:
@@ -152,7 +153,7 @@ elif 'start' in sys.argv or 'restart' in sys.argv:
         print 'failed'
 
 elif 'stop' in sys.argv:
-    daemon = yapdi.Daemon()
+    daemon = yapdi.Daemon(pidfile=PIDFILE)
 
     if not daemon.status():
         print "not running"
