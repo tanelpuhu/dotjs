@@ -1,16 +1,12 @@
 #!/usr/bin/env python
 "~/.js (python version)"
-# github.com/kasun/YapDi
-import yapdi
 from BaseHTTPServer import BaseHTTPRequestHandler
 from BaseHTTPServer import HTTPServer
 import ssl
-import sys
 import os
 import re
 
 JSDIR = os.path.join(os.path.expanduser('~'), '.js')
-PIDFILE = '/tmp/.js.pid'
 
 if not os.path.exists(JSDIR):
     os.mkdir(JSDIR)
@@ -101,6 +97,7 @@ def get_script(jsfile):
 
 
 class Server(BaseHTTPRequestHandler):
+
     def do_GET(request):
         """Respond to a GET request."""
         request.send_response(200)
@@ -126,7 +123,8 @@ def main():
         open(cert, 'w').write(get_cert())
 
     httpd = HTTPServer(('', 3131), Server)
-    httpd.socket = ssl.wrap_socket(httpd.socket, certfile=cert, server_side=True)
+    httpd.socket = ssl.wrap_socket(
+        httpd.socket, certfile=cert, server_side=True)
 
     try:
         httpd.serve_forever()
@@ -134,33 +132,5 @@ def main():
         pass
     httpd.server_close()
 
-if 'test' in sys.argv:
+if __name__ == '__main__':
     main()
-
-elif 'start' in sys.argv or 'restart' in sys.argv:
-    daemon = yapdi.Daemon(pidfile=PIDFILE)
-    if 'restart' in sys.argv:
-        retcode = daemon.restart()
-    else:
-        if daemon.status():
-            print "already running"
-            sys.exit()
-        retcode = daemon.daemonize()
-
-    if retcode == yapdi.OPERATION_SUCCESSFUL:
-        main()
-    else:
-        print 'failed'
-
-elif 'stop' in sys.argv:
-    daemon = yapdi.Daemon(pidfile=PIDFILE)
-
-    if not daemon.status():
-        print "not running"
-        sys.exit()
-
-    retcode = daemon.kill()
-    if retcode == yapdi.OPERATION_FAILED:
-        print 'Failed'
-else:
-    print 'Usage:', os.path.basename(__file__), '[start|stop|restart|test]'

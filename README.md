@@ -1,11 +1,13 @@
-dotjs
-=====
+# dotjs
 
 python version
 
-orignal idea [github.com/defunkt/dotjs](https://github.com/defunkt/dotjs) (for Mac OSX)
+original idea [github.com/defunkt/dotjs](https://github.com/defunkt/dotjs) (for Mac OSX)
 
-plugin [bit.ly/dotjs](http://bit.ly/dotjs)
+plug-in [bit.ly/dotjs](http://bit.ly/dotjs)
 
 cert self-signed
 
+## This could be used to "make cert file for windows"
+
+	openssl pkcs12 -export -out server.pfx -in ~/.js/server.pem -name "no-name"
