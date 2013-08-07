@@ -122,7 +122,7 @@ def main():
     if not os.path.exists(cert):
         open(cert, 'w').write(get_cert())
 
-    httpd = HTTPServer(('', 3131), Server)
+    httpd = HTTPServer(('127.0.0.1', 3131), Server)
     httpd.socket = ssl.wrap_socket(
         httpd.socket, certfile=cert, server_side=True)
 
