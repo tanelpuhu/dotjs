@@ -2,6 +2,7 @@
 "~/.js (python version)"
 from BaseHTTPServer import BaseHTTPRequestHandler
 from BaseHTTPServer import HTTPServer
+from SocketServer import ForkingMixIn
 import ssl
 import os
 import re
@@ -117,20 +118,27 @@ class Server(BaseHTTPRequestHandler):
         request.wfile.write(script)
 
 
+class ForkingHTTPServer(ForkingMixIn, HTTPServer):
+
+    def finish_request(self, request, client_address):
+        request.settimeout(30)
+        HTTPServer.finish_request(self, request, client_address)
+
+
 def main():
     cert = os.path.join(JSDIR, 'server.pem')
     if not os.path.exists(cert):
         open(cert, 'w').write(get_cert())
 
-    httpd = HTTPServer(('127.0.0.1', 3131), Server)
-    httpd.socket = ssl.wrap_socket(
-        httpd.socket, certfile=cert, server_side=True)
-
+    srvr = ForkingHTTPServer(('127.0.0.1', 3131), Server)
+    srvr.socket = ssl.wrap_socket(
+        srvr.socket, certfile=cert, server_side=True)
     try:
-        httpd.serve_forever()
+        srvr.serve_forever()
     except KeyboardInterrupt:
-        pass
-    httpd.server_close()
+        srvr.socket.close()
+        print 'Bye'
+
 
 if __name__ == '__main__':
     main()
